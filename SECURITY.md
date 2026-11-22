@@ -30,3 +30,11 @@ Include, where possible:
 ## Secrets
 
 This snapshot intentionally contains no API tokens or private keys. Configuration is supplied through environment variables; see `.env.example`. If you find a committed secret, treat it as compromised and report it privately.
+
+## Dependency status
+
+This is a retired testnet snapshot with a large, old dependency tree. It has known
+security advisories in Next.js and wallet libraries that were not all upgraded,
+because doing so would require a broader migration and the application is not
+maintained. Do not deploy this snapshot or expose it to untrusted traffic.
+

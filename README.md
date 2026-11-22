@@ -194,4 +194,4 @@ Notable archived-code risks:
 
 ## License
 
-Original source in this snapshot is released under the [MIT License](LICENSE). Vendored third-party code keeps its own license; see `vendor/klinecharts-pro/LICENSE` (Apache-2.0). Logos, trademarks, screenshots, and other brand assets remain the property of their respective owners and are included only as historical references.
+Original source in this snapshot is released under the [MIT License](LICENSE). Vendored third-party code keeps its own license; see `vendor/klinecharts-pro/LICENSE` (Apache-2.0) and [NOTICE.md](NOTICE.md). Logos, trademarks, screenshots, and other brand assets remain the property of their respective owners and are included only as historical references.
