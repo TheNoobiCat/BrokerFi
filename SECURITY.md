@@ -10,7 +10,7 @@ There is no bug bounty, no service-level commitment, and no guarantee that vulne
 
 Please report security issues **privately**. Do not open a public issue containing exploit details, private keys, credentials, or step-by-step abuse instructions.
 
-If this snapshot is published in a GitHub repository, use GitHub's **private vulnerability reporting / security advisory** feature for that repository. Otherwise, contact the maintainer or owner of the copy you obtained through their published private channel.
+Use GitHub's **private vulnerability reporting / security advisory** feature for this repository, or email **sam@cleth.xyz**. Do not open a public issue with exploit details.
 
 Include, where possible:
 
