@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Third-party components are licensed separately. In particular, the vendored
-@klinecharts/pro source and build under vendor/klinecharts-pro are distributed
-under the Apache License 2.0; see vendor/klinecharts-pro/LICENSE. Brand assets,
-logos, and screenshots are not covered by this MIT grant.
