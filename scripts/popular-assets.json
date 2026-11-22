@@ -1,0 +1,17 @@
+{
+  "popular": [
+    "BTCUSD",
+    "ETHUSD",
+    "SOLUSD",
+    "AAPL",
+    "TSLA",
+    "GOOGL",
+    "MSFT",
+    "NVDA",
+    "EUR/USD",
+    "GBP/USD",
+    "JPY/USD",
+    "Gold"
+  ],
+  "description": "List of popular asset symbols (matched against symbol or display fields). Popular assets are automatically favorited for new users. Edit this file and re-run 'npm run optimize:assets' to update."
+}

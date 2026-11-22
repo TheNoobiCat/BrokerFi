@@ -1,0 +1,91 @@
+type Market @entity(immutable: false) {
+  id: Bytes!
+  marketName: String!
+  pool: Bytes!
+  trading: Bytes!
+  pythPriceId: Bytes
+  createdAt: BigInt!
+  createdAtBlock: BigInt!
+  totalOrders: BigInt!
+  activeOrders: BigInt!
+  executedOrders: BigInt!
+  cancelledOrders: BigInt!
+  orders: [LimitOrder!]! @derivedFrom(field: "market")
+}
+
+type LimitOrder @entity(immutable: false) {
+  id: String!
+  orderId: Bytes!
+  market: Market!
+  trader: User!
+  collateral: BigInt!
+  size: BigInt!
+  isLong: Boolean!
+  triggerPrice: BigInt!
+  attachedStopLoss: BigInt!
+  attachedTakeProfit: BigInt!
+  expiryTime: BigInt!
+  createdTime: BigInt!
+  createdAtBlock: BigInt!
+  status: OrderStatus!
+  executedAt: BigInt
+  executedAtBlock: BigInt
+  cancelledAt: BigInt
+  cancelledAtBlock: BigInt
+  keeper: Bytes
+  keeperFee: BigInt
+}
+
+enum OrderStatus {
+  ACTIVE
+  EXECUTED
+  CANCELLED
+}
+
+type User @entity(immutable: false) {
+  id: Bytes!
+  totalOrders: BigInt!
+  activeOrders: BigInt!
+  executedOrders: BigInt!
+  cancelledOrders: BigInt!
+  orders: [LimitOrder!]! @derivedFrom(field: "trader")
+}
+type OptionsMarket @entity(immutable: false) {
+  id: String!
+  priceFeedId: Bytes!
+  deployer: Bytes!
+  community: Boolean!
+  contractSize: BigInt!
+  createdAt: BigInt!
+  createdAtBlock: BigInt!
+}
+type OptionsSeries @entity(immutable: false) {
+  id: Bytes!
+  underlyingPriceFeedId: Bytes!
+  isCall: Boolean!
+  strikePrice: BigInt!
+  expiry: BigInt!
+  contractSize: BigInt!
+  createdAt: BigInt!
+  createdAtBlock: BigInt!
+}
+
+type OptionsOrder @entity(immutable: false) {
+  id: String!
+  orderId: Bytes!
+  series: OptionsSeries!
+  trader: User!
+  isLong: Boolean!
+  limitPrice: BigInt!
+  quantity: BigInt!
+  marginLocked: BigInt!
+  intent: String!
+  isLiquidation: Boolean!
+  createdTime: BigInt!
+  createdAtBlock: BigInt!
+  status: OrderStatus!
+  executedAt: BigInt
+  executedAtBlock: BigInt
+  cancelledAt: BigInt
+  cancelledAtBlock: BigInt
+}

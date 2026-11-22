@@ -1,0 +1,16 @@
+{
+  "categories": {
+    "crypto": {
+      "sprite": "crypto.webp",
+      "map": "crypto.json",
+      "count": 65
+    },
+    "stock": {
+      "sprite": "stock.webp",
+      "map": "stock.json",
+      "count": 542
+    }
+  },
+  "iconSize": 20,
+  "totalIcons": 607
+}

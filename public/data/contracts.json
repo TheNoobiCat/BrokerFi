@@ -1,0 +1,110 @@
+{
+  "chainId": 421614,
+  "chainName": "Arbitrum Sepolia",
+  "deployer": "0xB15cbdF974D05A22837a9cbc5a28F336c322F476",
+
+  "external": {
+    "usdc": "0x4b1fACeF3553C0c7A67D6AB240394E9aad566c2d",
+    "pyth": "0x4374e5a8b9C22271E9EB878A2AA31DE97DF15DAF"
+  },
+
+  "core": {
+    "constants": "0x47b512259f7a1A1d7aF5C1eB73C09EC529287fBE",
+    "treasury": "0x6A4838B926a2Eb9Fb6584C71d66803FF8f27E292",
+    "feeFlow": "0xEB07e80Aa2870374378db4Dc95692cd9c8212593",
+    "insuranceFund": "0xA32e6b9632D83cFA1076eC077A3Bd75a773A73A2"
+  },
+
+  "tokens": {
+    "cleth": "0xe7CF6Ce8436BBb1ED54423A338218Fc8Adb0EAB9"
+  },
+
+  "staking": {
+    "clethStakingDiscount": "0x63F0e710E905eA01D3b1B2B70933252D00f2BB0a"
+  },
+
+  "options": {
+    "optionMarket": "0x2556bF12C02ae458626366d24Ffc2c8eD0b0cC85",
+    "orderbook": "0xfd1A9bC3F5bA337994B3830DEba329a2B5BC3451",
+    "marginAccount": "0x09009446ce64472267B2cC363E91b65533702532"
+  },
+
+  "perps": {
+    "factory": "0x31AbC821371A478a7987CA0F84f7ECaE0115d72B",
+    "implementations": {
+      "liquidityPool": "0x82FF4E981B3Cc78ccA4e6aA2B4F3688C3b87291f",
+      "perpetualTrading": "0x789744C49AF0f73f3334B701E1d060734E408376"
+    },
+    "markets": {
+      "ETH-PERP": {
+        "id": "eth-perp",
+        "name": "ETH-PERP",
+        "displayName": "Ethereum Perpetual",
+        "baseAsset": "ETH",
+        "quoteAsset": "USDC",
+        "pool": "0xf586eb6c5553ed3dfb353dc5914d9bee9ba46c3c",
+        "lpToken": "0xc88114d61370f70861637453d08de85c4ccd2285",
+        "trading": "0x52be7c5edf92a3b47b098009ea8127ac41a47adc",
+        "limitOrderBook": "0x349773428bf568223f6bef74b6f106d7bcc0ea84",
+        "pythPriceId": "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace",
+        "chainId": 421614,
+        "yield": 15.2,
+        "tvl": 1800000,
+        "performance": [
+          { "time": "1D", "value": 100 },
+          { "time": "2D", "value": 105 },
+          { "time": "3D", "value": 110 },
+          { "time": "4D", "value": 108 },
+          { "time": "5D", "value": 115 },
+          { "time": "6D", "value": 118 },
+          { "time": "7D", "value": 122 },
+          { "time": "8D", "value": 125 },
+          { "time": "9D", "value": 130 },
+          { "time": "10D", "value": 135 }
+        ]
+      },
+      "BTC-PERP": {
+        "id": "btc-perp",
+        "name": "BTC-PERP",
+        "displayName": "Bitcoin Perpetual",
+        "baseAsset": "BTC",
+        "quoteAsset": "USDC",
+        "pool": "0x5556795c495cbc0acf03c28393e2a17b42d92070",
+        "lpToken": "0xf3a8c810cd65ec86c198c86d4782b54f592d8931",
+        "trading": "0x5aea6818b8c0a15a787a60c8fb9b40150ec9e9d0",
+        "limitOrderBook": "0x0af3575cc20b63290f6b2a228c85f87c952564bb",
+        "pythPriceId": "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43",
+        "chainId": 421614,
+        "yield": 12.5,
+        "tvl": 2500000,
+        "performance": [
+          { "time": "1D", "value": 100 },
+          { "time": "2D", "value": 102 },
+          { "time": "3D", "value": 98 },
+          { "time": "4D", "value": 105 },
+          { "time": "5D", "value": 108 },
+          { "time": "6D", "value": 112 },
+          { "time": "7D", "value": 115 },
+          { "time": "8D", "value": 118 },
+          { "time": "9D", "value": 120 },
+          { "time": "10D", "value": 125 }
+        ]
+      }
+    }
+  },
+
+  "instantExecution": {
+    "channelFactory": "0x2d6d21c53c01632e4466a9c03b1a7c7b62c1aace"
+  },
+
+  "priceFeeds": {
+    "ETH": {
+      "pythId": "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace",
+      "lotSize": "100000000000000000"
+    },
+    "BTC": {
+      "pythId": "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43",
+      "lotSize": "10000000000000000"
+    }
+  }
+}

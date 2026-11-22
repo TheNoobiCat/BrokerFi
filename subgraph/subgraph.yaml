@@ -1,0 +1,100 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PerpetualFactory
+    network: arbitrum-sepolia
+    source:
+      address: "0x31AbC821371A478a7987CA0F84f7ECaE0115d72B"
+      abi: PerpetualFactory
+      startBlock: 242562609
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Market
+      abis:
+        - name: PerpetualFactory
+          file: ./abis/Factory.json
+        - name: LimitOrderBook
+          file: ./abis/LimitOrderBook.json
+        - name: PerpetualTrading
+          file: ./abis/PerpTrading.json
+      eventHandlers:
+        - event: MarketCreated(indexed string,address,address,address)
+          handler: handleMarketCreated
+      file: ./src/factory.ts
+  - kind: ethereum
+    name: OptionsOrderbook
+    network: arbitrum-sepolia
+    source:
+      address: "0xfd1a9bc3f5ba337994b3830deba329a2b5bc3451" 
+      abi: OptionsOrderbook
+      startBlock: 242362614
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OptionsSeries
+        - OptionsOrder
+        - User
+      abis:
+        - name: OptionsOrderbook
+          file: ./abis/OptionsOrderbook.json
+      eventHandlers:
+        - event: LimitOrderCreated(indexed bytes32,indexed bytes32)
+          handler: handleOptionsLimitOrderCreated
+        - event: LimitOrderCancelled(indexed bytes32,indexed bytes32)
+          handler: handleOptionsLimitOrderCancelled
+      file: ./src/options-orderbook.ts
+  - kind: ethereum
+    name: OptionMarket
+    network: arbitrum-sepolia
+    source:
+      address: "0x2556bf12c02ae458626366d24ffc2c8ed0b0cc85"
+      abi: OptionMarket
+      startBlock: 242362588
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OptionsMarket
+      abis:
+        - name: OptionMarket
+          file: ./abis/OptionMarket.json
+      eventHandlers:
+        - event: MarketCreated(indexed bytes32,indexed address,uint256)
+          handler: handleMarketCreated
+      file: ./src/option-market.ts
+
+templates:
+  - kind: ethereum/contract
+    name: LimitOrderBook
+    network: arbitrum-sepolia
+    source:
+      abi: LimitOrderBook
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - LimitOrder
+        - Market
+        - User
+      abis:
+        - name: LimitOrderBook
+          file: ./abis/LimitOrderBook.json
+        - name: PerpetualTrading
+          file: ./abis/PerpTrading.json
+      eventHandlers:
+        - event: LimitOrderCreated(indexed bytes32,indexed address,uint256,uint256,uint256)
+          handler: handleLimitOrderCreated
+        - event: LimitOrderExecuted(indexed bytes32,indexed address)
+          handler: handleLimitOrderExecuted
+        - event: LimitOrderCancelled(indexed bytes32,indexed address)
+          handler: handleLimitOrderCancelled
+      file: ./src/orderbook.ts
